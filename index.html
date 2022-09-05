@@ -52,7 +52,7 @@
         parent.postMessage(response, '*')
         google.accounts.id.revoke(response.email, done => {
           console.log('consent revoked');
-        }
+        });
   });
       }
       
