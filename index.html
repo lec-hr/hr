@@ -50,6 +50,10 @@
 //           console.log("Encoded JWT ID token: " + response.credential);
         var response = decodeJwtResponse(response.credential);
         parent.postMessage(response, '*')
+        google.accounts.id.revoke(response.email, done => {
+          console.log('consent revoked');
+        }
+  });
       }
       
       window.onload = function () {
